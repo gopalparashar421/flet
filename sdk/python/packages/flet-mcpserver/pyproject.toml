@@ -1,0 +1,32 @@
+[project]
+name = "flet-mcpserver"
+version = "0.1.0"
+description = "MCP server for the Flet framework – exposes docs, control schemas, code validation and examples to AI coding agents."
+authors = [{ name = "Appveyor Systems Inc.", email = "hello@flet.dev" }]
+license = "Apache-2.0"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastmcp >=3.1.0",
+]
+
+[project.optional-dependencies]
+ui = ["playwright >=1.40"]
+
+[project.urls]
+Homepage = "https://flet.dev"
+Repository = "https://github.com/flet-dev/flet"
+Documentation = "https://flet.dev/docs"
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+flet_mcp = ["data/*.db"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
